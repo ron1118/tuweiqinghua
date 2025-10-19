@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 土味情话生成器 💕
 
-## Getting Started
+一个智能的土味情话生成工具，帮助你在聊天中轻松撩妹！
 
-First, run the development server:
+## 功能特点
+
+- 🤖 **AI智能生成**：使用大模型生成创意土味情话
+- 🎚️ **暧昧程度调节**：1-10级滑块控制情话的暧昧程度
+- 📱 **移动端优化**：完美适配手机和电脑访问
+- 💬 **微信风格界面**：熟悉的聊天界面设计
+- ⚡ **实时生成**：每次生成3条不同的土味情话
+- 🔧 **PWA支持**：可安装到手机桌面，离线使用
+- 🎯 **触摸优化**：针对移动端触摸操作优化
+- 📐 **响应式设计**：自适应不同屏幕尺寸
+
+## 使用方法
+
+### 基本使用
+1. 在输入框中输入对方说的话
+2. 调节暧昧程度滑块（1-10级）
+3. 点击发送按钮
+4. AI会生成3条不同风格的土味情话
+
+### 移动端使用
+- **手机访问**：在手机浏览器中打开网址，界面会自动适配
+- **安装到桌面**：支持PWA，可以添加到手机桌面
+- **触摸操作**：滑块和按钮都针对触摸进行了优化
+- **键盘支持**：支持回车键发送消息
+
+## 技术栈
+
+- **前端**：Next.js 15 + TypeScript + Tailwind CSS
+- **AI模型**：Google Gemini 2.5 Flash (通过 OpenRouter)
+- **部署**：支持Vercel等平台
+
+## 本地开发
 
 ```bash
+# 安装依赖
+npm install
+
+# 启动开发服务器
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# 访问应用
+open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 部署
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# 构建生产版本
+npm run build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# 启动生产服务器
+npm start
+```
 
-## Learn More
+## 注意事项
 
-To learn more about Next.js, take a look at the following resources:
+- 需要有效的OpenRouter API密钥
+- 建议在移动端使用以获得最佳体验
+- 生成的内容仅供娱乐，请合理使用
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 许可证
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT License

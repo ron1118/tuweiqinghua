@@ -1,26 +1,157 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --wechat-bg: #ededed;
+  --wechat-green: #07c160;
+  --wechat-light-green: #95ec69;
+  --wechat-gray: #f7f7f7;
+  --wechat-dark-gray: #d9d9d9;
+  --wechat-text: #191919;
+  --wechat-light-text: #888888;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-wechat-bg: var(--wechat-bg);
+  --color-wechat-green: var(--wechat-green);
+  --color-wechat-light-green: var(--wechat-light-green);
+  --color-wechat-gray: var(--wechat-gray);
+  --color-wechat-dark-gray: var(--wechat-dark-gray);
+  --color-wechat-text: var(--wechat-text);
+  --color-wechat-light-text: var(--wechat-light-text);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--wechat-bg);
+  color: var(--wechat-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* 移动端优化 */
+@media (max-width: 640px) {
+  body {
+    font-size: 16px; /* 防止iOS缩放 */
+  }
+  
+  input, textarea, button {
+    font-size: 16px; /* 防止iOS缩放 */
+  }
+  
+  /* 移动端安全区域 */
+  .safe-area-inset {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* 触摸优化 */
+button, input[type="range"], textarea {
+  touch-action: manipulation;
+}
+
+/* 防止双击缩放 */
+* {
+  touch-action: manipulation;
+}
+
+/* 移动端滚动优化 */
+@media (max-width: 640px) {
+  .overflow-y-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* 防止iOS Safari的橡皮筋效果 */
+  body {
+    overscroll-behavior: none;
+  }
+  
+  /* 优化触摸反馈 */
+  button:active, input:active, textarea:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+  
+  /* 优化长按选择文本 */
+  .selectable {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+  
+  /* 防止双击缩放 */
+  input, textarea, button {
+    touch-action: manipulation;
+  }
+}
+
+/* 自定义滑块样式 */
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #07c160;
+  cursor: pointer;
+  border: 3px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.slider::-webkit-slider-thumb:active {
+  transform: scale(1.2);
+}
+
+.slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #07c160;
+  cursor: pointer;
+  border: 3px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+/* 移动端滑块优化 */
+@media (max-width: 640px) {
+  .slider::-webkit-slider-thumb {
+    width: 28px;
+    height: 28px;
+    border: 4px solid white;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 28px;
+    height: 28px;
+    border: 4px solid white;
+  }
 }
